@@ -1,6 +1,7 @@
 # FieldmapPreprocessing
 The script takes in a 2 volume GE B0 fieldmap file and returns a single volume fieldmap and a magnitude file in BIDS format. Data must be in BIDS format prior to running!!
 
+```
 fieldmap_preproc.sh splits the 2 volume 
 # b0map outputs from the GE Discovery scanner,
 # renames them to BIDS convention, and adds
@@ -17,3 +18,4 @@ fieldmap_preproc.sh splits the 2 volume
 # - sub-<subjectid>_acq-b0map-split_fieldmap.nii.gz
 # - sub-<subjectid>_acq-b0map-split_fieldmap.json
 # - sub-<subjectid>_acq-b0map-split_magnitude.nii.gz
+```
