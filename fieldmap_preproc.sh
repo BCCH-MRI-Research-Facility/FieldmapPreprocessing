@@ -72,13 +72,13 @@ do
 
     # write the nifti files
     3dcopy vol0000.nii.gz \
-           ${array[0]}_${array[1]}-split_run-${run}_fieldmap.nii.gz
+           ${array[0]}_${array[1]}split_run-${run}_fieldmap.nii.gz
     3dcopy vol0001.nii.gz \
-           ${array[0]}_${array[1]}-split_run-${run}_magnitude.nii.gz
+           ${array[0]}_${array[1]}split_run-${run}_magnitude.nii.gz
 
     # and copy the json file to the new name
     cp ${strings[$i]%.nii.gz}.json \
-       ${array[0]}_${array[1]}-split_run-${run}_fieldmap.json
+       ${array[0]}_${array[1]}split_run-${run}_fieldmap.json
   
     # now remove the wrongly named files
     rm vol000*
