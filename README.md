@@ -15,7 +15,7 @@ fieldmap_preproc.sh splits the 2 volume
 # bash fieldmap_preproc.sh <BIDS root directory> `pwd`
 #
 # OUTPUT:
-# - sub-<subjectid>_acq-b0map-split_fieldmap.nii.gz
-# - sub-<subjectid>_acq-b0map-split_fieldmap.json
-# - sub-<subjectid>_acq-b0map-split_magnitude.nii.gz
+# - sub-<subjectid>_acq-b0mapsplit<_run-01>_fieldmap.nii.gz
+# - sub-<subjectid>_acq-b0mapsplit<_run-01>_fieldmap.json
+# - sub-<subjectid>_acq-b0mapsplit<_run-01>_magnitude.nii.gz
 ```
