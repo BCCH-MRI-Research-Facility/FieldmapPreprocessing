@@ -2,6 +2,8 @@
 # Author: Lynne Williams
 # July 28, 2020 16:43:04 PDT
 #
+# UPDATED: July 31, 2020 10:18:40 PDT
+#
 # fieldmap_preproc.sh splits the 2 volume 
 # b0map outputs from the GE Discovery scanner,
 # renames them to BIDS convention, and adds
