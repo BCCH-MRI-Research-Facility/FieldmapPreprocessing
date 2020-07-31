@@ -66,7 +66,7 @@ Make sure `feat`’s registration step has:
 
 
 ##### Footnotes
-<b id="f2"><b id="f1">1</b></b> [`dcm2niix`](https://github.com/rordenlab/dcm2niix) ([https://github.com/rordenlab/dcm2niix](https://github.com/rordenlab/dcm2niix)) using the `-b` flag is the recommended dicom converter if the values are not yet in your `.json` file. [↩](#a1)  
+<b id="f2"><b id="f1">1</b></b> [`dcm2niix`](https://github.com/rordenlab/dcm2niix) ([https://github.com/rordenlab/dcm2niix](https://github.com/rordenlab/dcm2niix)) using the `-b` flag is the recommended dicom converter if the values are not yet in your `.json` file. Note that `dcm2niix` assumes that the GE fieldmaps consist of a regularized fieldmap and a magnitude image, so the `.json` file produced will show values consistent with the regularized fieldmap. This means the original `.json` file produced is wrong for the data type.  This is fixed by the script above, which produces a regularized fieldmap. [↩](#a1)  
 
 
 
