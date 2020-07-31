@@ -5,10 +5,10 @@ date: "2020-07-31"
 ---
 
 # B<sub>0</sub> Fieldmap Preprocessing
-The script takes in a 2 volume GE b<sub>0</sub> fieldmap file (which is not a regularized fieldmap on our BCCH MRI Research Facility 3T Discovery) and returns a single volume regularized fieldmap and a magnitude file in BIDS format. Data must be in BIDS format prior to running!!
+The script takes in a 2 volume GE b<sub>0</sub> fieldmap file (which is not a regularized fieldmap on our BCCH MRI Research Facility 3T Discovery) and returns a single volume regularized fieldmap and a magnitude file in BIDS format. Data must be in BIDS format prior to running!! See the [Brain Imaging Data Structure (BIDS) Standard](https://bids.neuroimaging.io/) to format your data directory and naming structure.
 
 ## BIDS Formatting of the original BCCH MRI Research Facility GE scanner output
-* When in BIDS format, the filename should look something like `sub-<subjid>_acq-b0map_fieldmap.nii.gz` with its corresponding `json` file `sub-<subjid>_acq-b0map_fieldmap.json`.
+* When in BIDS format, the filename should look something like `sub-<subjid>_acq-b0map_fieldmap.nii.gz` with its corresponding `json` file `sub-<subjid>_acq-b0map_fieldmap.json`. Use the online [BIDS validator](https://bids-standard.github.io/bids-validator/) at [https://bids-standard.github.io/bids-validator/](https://bids-standard.github.io/bids-validator/) to verify your BIDS formatting before starting.
 
 ## Usage
 To use the shell script enter the following into a `bash` shell from the directory where you stored the Fieldmap Preprocessing `.sh` file:
@@ -36,11 +36,6 @@ Load `feat_gui` or `melodic_ica_gui`, and setup prestats B<sub>0</sub> unwarping
 Make sure `feat`’s registration step has:
 * Main Structural Image=Non-uniformity corrected, brain extracted high-res structural with naming convention T1_brain for brain extracted T1 (both T1 and T1_brain must exist)
 * Registration Method is BBR
-
-
-
-
-
 
 
 ```
