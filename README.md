@@ -46,7 +46,7 @@ Load `feat_gui` or `melodic_ica_gui`, and setup prestats B<sub>0</sub> unwarping
 * Fieldmap = `sub-<subjid>_acq-b0mapsplit_run-<0?>_fieldmap.nii.gz`
 * Fieldmap map = `sub-<subjid>_acq-b0mapsplit_run-<0?>_magnitude.nii.gz`
 * Effective EPI echo spacing = EPI’s time between successive k-space lines (in ms). You can find this in the corresponding `.json` file
-* EPI TE = EPI’s TE (in ms). Again, find the value in the corresponding `.json` file
+* EPI TE = EPI’s TE (in ms). Again, find the value in the corresponding `.json` file.  `dcm2niix` using the `-b` flag is the recommended dicom converter if the values are not yet in your `.json` file.  
 * Unwarp direction = `+phase-encoding direction` (for axial EPI=+y)
 * %Signal Loss Threshold = `10`
 
