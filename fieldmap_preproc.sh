@@ -71,7 +71,7 @@ do
     bet vol0001 vol0001_brain -R -m
     
     # errode the brain mask. Choose FWHM between 1-3 mm appropriately so that mask is slightly smaller than the brain image
-    fslmaths vol0001_brain_mask -kernel gauss FWHM -ero vol0001_brain_mask
+    fslmaths vol0001_brain_mask -kernel gauss 1 -ero vol0001_brain_mask
     
     # remask vol0001.nii.gz with eroded brain mask 
     fslmaths vol0001 -mas vol0001_brain_mask vol0001_brain
