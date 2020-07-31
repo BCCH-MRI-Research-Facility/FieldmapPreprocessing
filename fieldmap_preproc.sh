@@ -60,9 +60,34 @@ do
 
     # split the file into its 2 volumes
     fslsplit ${strings[$i]}
-
+    
     # break the string apart and assign it to an array
     IFS='_' read -r -a array <<< "${strings[$i]}"
+    
+    echo "++++ First the Magnitude Image"
+    # run the FSL Brain Extraction Tool (BET) on the magnitude image (vol0001.nii.gz)
+    bet vol0001 vol0001_brain -R -m, output=mag_brain, vol0001_brain_mask
+    
+    # errode the brain mask. Choose FWHM between 1-3 mm appropriately so that mask is slightly smaller than the brain image
+    fslmaths vol0001_brain_mask -kernel gauss FWHM -ero vol0001_brain_mask
+    
+    # remask vol0001.nii.gz with eroded brain mask 
+    fslmaths vol0001 - mas vol0001_brain_mask vol0001_brain
+    
+    echo "++++ Now the Phase-difference Image"
+    # The phase difference image is in units of Hz, and is phase-wrapped. To unwrap, normalize phase difference image to [-pi,pi] range. **dTEinv is inverse of the TE difference (in ms) in the GRE sequence. Usually dTEinv = 217 **. The default value of dTEinv of 217 is used here.  Change this value if different for your acquisition.
+    dTEinv=217
+    fslmaths vol0000 -mul 3.1415 -div dTEinv vol0000_rad
+    
+    # phase_rad is now in units of radians. Unwrap phase_rad using FSL PRELUDE 
+    prelude -a vol0002 -p vol0000_rad -o vol0000_rad_unwrapped
+    
+   # convert phase_rad_unwrapped into rad/s units 
+   fslmaths vol0000_rad_unwrapped -mul dTEinv vol0000_rad_unwrapped_rps
+    
+   #regularlize phase_rad_unwrapped_rps using FUGUE. As a note, different regularization methods exists within FUGUE. 
+   fugue --loadfmap=vol0000_rad_unwrapped_rps.nii.gz -s FWHM --savefmap=vol0000_fieldmap.nii.gz)
+    
 
     # copy the files to their correct BIDS naming conventions 
     # (using AFNI to keep the history)
@@ -71,9 +96,9 @@ do
     printf -v run "%02d" $(( $i + 1 ))
 
     # write the nifti files
-    3dcopy vol0000.nii.gz \
+    3dcopy vol0000_fieldmap.nii.gz \
            ${array[0]}_${array[1]}split_run-${run}_fieldmap.nii.gz
-    3dcopy vol0001.nii.gz \
+    3dcopy vol0001_brain.nii.gz \
            ${array[0]}_${array[1]}split_run-${run}_magnitude.nii.gz
 
     # and copy the json file to the new name
