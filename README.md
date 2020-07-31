@@ -8,6 +8,17 @@ date: "2020-07-31"
 - `bash` shell (Note: `zsh` is now the shell for `MAC OS`, you will need to switch to bash to use the code)
 - `FSL` v6.0 or above
 
+If you use this script, please be sure to cite its dependencies:
+### FSL
+1. M.W. Woolrich, S. Jbabdi, B. Patenaude, M. Chappell, S. Makni, T. Behrens, C. Beckmann, M. Jenkinson, S.M. Smith. Bayesian analysis of neuroimaging data in FSL. NeuroImage, 45:S173-86, 2009
+
+2. S.M. Smith, M. Jenkinson, M.W. Woolrich, C.F. Beckmann, T.E.J. Behrens, H. Johansen-Berg, P.R. Bannister, M. De Luca, I. Drobnjak, D.E. Flitney, R. Niazy, J. Saunders, J. Vickers, Y. Zhang, N. De Stefano, J.M. Brady, and P.M. Matthews. Advances in functional and structural MR image analysis and implementation as FSL. NeuroImage, 23(S1):208-19, 2004
+
+3. M. Jenkinson, C.F. Beckmann, T.E. Behrens, M.W. Woolrich, S.M. Smith. FSL. NeuroImage, 62:782-90, 2012
+
+### PRELUDE 
+
+
 ## B<sub>0</sub> Fieldmap Preprocessing
 The script takes in a 2 volume GE b<sub>0</sub> fieldmap file (which is not a regularized fieldmap on our BCCH MRI Research Facility 3T Discovery) and returns a single volume regularized fieldmap and a magnitude file in BIDS format. Data must be in BIDS format prior to running!! See the [Brain Imaging Data Structure (BIDS) Standard](https://bids.neuroimaging.io/) to format your data directory and naming structure.
 
