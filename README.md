@@ -5,7 +5,7 @@ date: "2020-07-31"
 ---
 
 ## Requirements
-- `bash` shell (Note: zsh is now the shell for `MAC OS`, you will need to switch to bash to use the code)
+- `bash` shell (Note: `zsh` is now the shell for `MAC OS`, you will need to switch to bash to use the code)
 - `FSL` v6.0 or above
 
 ## B<sub>0</sub> Fieldmap Preprocessing
