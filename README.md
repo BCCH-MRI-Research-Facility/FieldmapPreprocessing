@@ -4,7 +4,7 @@ author: "Danny Kim & Lynne Williams"
 date: "2020-07-31"
 ---
 
-# B<sub>0</sub> Unwarping for GE PhaseDiff & Magnitude Fieldmap files
+# B<sub>0</sub> Unwarping for GE PhaseDiff & Magnitude Fieldmap Files
 Danny Kim & Lynne Williams <br>
 Updated: 2020-07-31 <br>
 Licensed under [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/)
