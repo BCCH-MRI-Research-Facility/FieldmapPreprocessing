@@ -25,12 +25,12 @@ You are ready to go.  Make sure the new files are in the `fmap` folder. Use your
 
 ### if using `FSL`
 Load `feat_gui` or `melodic_ica_gui`, and setup prestats B<sub>0</sub> unwarping option with:
-* Fieldmap=fieldmap.nii.gz
-* Fieldmap map=mag_brain.nii.gz
-* Effective EPI echo spacing=EPI’s time between successive k-space lines (in ms)
-* EPI TE=EPI’s TE (in ms)
-* Unwarp direction=+phase-encoding direction (for axial EPI=+y)
-* %Signal Loss Threshold=10
+* Fieldmap = `sub-<subjid>_acq-b0mapsplit_run-<0?>_fieldmap.nii.gz
+* Fieldmap map = `sub-<subjid>_acq-b0mapsplit_run-<0?>_magnitude.nii.gz`
+* Effective EPI echo spacing = EPI’s time between successive k-space lines (in ms). You can find this in the corresponding `.json` file
+* EPI TE = EPI’s TE (in ms). Again, find the value in the corresponding `.json` file
+* Unwarp direction = `+phase-encoding direction` (for axial EPI=+y)
+* %Signal Loss Threshold = `10`
 
 #### If using FEAT
 Make sure `feat`’s registration step has:
