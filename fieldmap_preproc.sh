@@ -68,27 +68,34 @@ do
     
     echo "++++ First the Magnitude Image"
     # run the FSL Brain Extraction Tool (BET) on the magnitude image (vol0001.nii.gz)
-    bet vol0001 vol0001_brain -R -m, output=mag_brain, vol0001_brain_mask
+    bet vol0001 vol0001_brain -R -m
     
     # errode the brain mask. Choose FWHM between 1-3 mm appropriately so that mask is slightly smaller than the brain image
     fslmaths vol0001_brain_mask -kernel gauss FWHM -ero vol0001_brain_mask
     
     # remask vol0001.nii.gz with eroded brain mask 
-    fslmaths vol0001 - mas vol0001_brain_mask vol0001_brain
+    fslmaths vol0001 -mas vol0001_brain_mask vol0001_brain
     
-    echo "++++ Now the Phase-difference Image"
-    # The phase difference image is in units of Hz, and is phase-wrapped. To unwrap, normalize phase difference image to [-pi,pi] range. **dTEinv is inverse of the TE difference (in ms) in the GRE sequence. Usually dTEinv = 217 **. The default value of dTEinv of 217 is used here.  Change this value if different for your acquisition.
-    dTEinv=217
-    fslmaths vol0000 -mul 3.1415 -div dTEinv vol0000_rad
+    echo "++++ Now the Phase-difference Image (this takes awhile. It might be a good time for coffee)"
+    # The phase difference image is in units of Hz, and is 
+    # phase-wrapped. To unwrap, normalize phase difference 
+    # image to [-pi,pi] range. **dTEinv is inverse of the 
+    # TE difference (in ms) in the GRE sequence. Usually 
+    # dTEinv = 217 **. The default value of dTEinv of 
+    # 217 is used here.  Change this value if different for your acquisition.
+    fslmaths vol0000 -mul 3.1415 -div 217 vol0000_rad
     
     # phase_rad is now in units of radians. Unwrap phase_rad using FSL PRELUDE 
-    prelude -a vol0002 -p vol0000_rad -o vol0000_rad_unwrapped
+    prelude -a vol0000 -p vol0000_rad -o vol0000_rad_unwrapped
     
-   # convert phase_rad_unwrapped into rad/s units 
-   fslmaths vol0000_rad_unwrapped -mul dTEinv vol0000_rad_unwrapped_rps
+    # convert phase_rad_unwrapped into rad/s units 
+    fslmaths vol0000_rad_unwrapped -mul dTEinv vol0000_rad_unwrapped_rps
     
-   #regularlize phase_rad_unwrapped_rps using FUGUE. As a note, different regularization methods exists within FUGUE. 
-   fugue --loadfmap=vol0000_rad_unwrapped_rps.nii.gz -s FWHM --savefmap=vol0000_fieldmap.nii.gz)
+    #regularlize phase_rad_unwrapped_rps using FUGUE. As a note, 
+    # different regularization methods exists within FUGUE. Note FWHM=5.
+    # Change if needed for your data
+    fugue --loadfmap=vol0000_rad_unwrapped_rps.nii.gz \
+       -s 5 --savefmap=vol0000_fieldmap.nii.gz
     
 
     # copy the files to their correct BIDS naming conventions 
