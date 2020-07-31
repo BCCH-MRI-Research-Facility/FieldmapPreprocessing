@@ -5,7 +5,7 @@ date: "2020-07-31"
 ---
 
 # B<sub>0</sub> Unwarping for Fieldmaps
-Danny Kim & Lynne Williams
+Danny Kim & Lynne Williams <br>
 Updated: 2020-07-31
 
 ## Requirements
