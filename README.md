@@ -20,7 +20,7 @@ bash fieldmap_preproc.sh <BIDS root directory> `pwd`
 The script will write the new files to the `fmap` directory for each subject and enter the original two volume map into the `.bidsignore` file so that any BIDS derived software (e.g., `MRIQC`, `fMRIprep`) will not pick it up by accident.
 
 ## Now you are ready for `fMRIprep` or `FSL` processing
-### If using `fMRIprep`
+### If using `fMRIprep`([https://fmriprep.org/en/latest/usage.html](https://fmriprep.org/en/latest/usage.html))
 You are ready to go.  Make sure the new files are in the `fmap` folder. Use your usual `fmriprep-docker` command to get things going.
 
 ### If using `FSL`
