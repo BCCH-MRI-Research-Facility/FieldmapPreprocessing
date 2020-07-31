@@ -10,7 +10,10 @@ Updated: 2020-07-31 <br>
 Licensed under [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/)
 
 ## Requirements
-- `bash` shell (Note: `zsh` is now the shell for `MAC OS`, you will need to switch to `bash` to use the code)
+- `bash` shell 
+  - MAC OS: `zsh` is now the shell for `MAC OS`, you will need to switch to `bash` to use the code
+  - Windows: You will need to install a `bash` interpreter. See [The Carpentries](https://carpentries.org/) to get more information on how to do this.
+  - Linux: Make sure you are using the `bash` shell
 - `FSL` v6.0 or above
 
 If you use this script, please be sure to cite its dependencies:
