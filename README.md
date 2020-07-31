@@ -9,7 +9,7 @@ Danny Kim & Lynne Williams <br>
 BCCH MRI Research Facility <br>
 Updated: 2020-07-31 <br>
 
-Licensed under [![License: CC0-1.0](https://licensebuttons.net/l/zero/1.0/80x15.png)]
+Licensed under [![License: CC0-1.0](https://licensebuttons.net/l/zero/1.0/80x15.png)](LICENSE)
 
 ## Requirements
 - `bash` shell 
