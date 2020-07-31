@@ -36,7 +36,7 @@ chsh bash
 To use the shell script enter the following into a `bash` shell from the directory where you stored the Fieldmap Preprocessing `.sh` file:
 
 ```
-bash fieldmap_preproc.sh <BIDS root directory> `pwd`
+bash fieldmap_preproc.sh <Full path to BIDS root directory> `pwd`
 ```
 
 The script will write the new files to the `fmap` directory for each subject and enter the original two volume map into the `.bidsignore` file so that any BIDS derived software (e.g., `MRIQC`, `fMRIprep`) will not pick it up by accident.
