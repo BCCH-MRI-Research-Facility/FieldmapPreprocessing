@@ -4,7 +4,7 @@ author: "Danny Kim & Lynne Williams"
 date: "2020-07-31"
 ---
 
-# {{ title }}
+# ({{ title }})
 
 
 ## Requirements
