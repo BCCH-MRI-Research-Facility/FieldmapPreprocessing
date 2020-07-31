@@ -33,7 +33,7 @@ Open a terminal window. If not already in a bash shell, switch shells:
 chsh bash
 ```
 
-To use the shell script enter the following into a `bash` shell from the directory where you stored the Fieldmap Preprocessing `.sh` file:
+To use the shell script enter the following into a `bash` shell from the directory where you stored the Fieldmap Preprocessing `fieldmap_preproc.sh` file:
 
 ```
 bash fieldmap_preproc.sh <Full path to BIDS root directory> `pwd`
