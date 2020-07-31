@@ -4,8 +4,9 @@ author: "Danny Kim & Lynne Williams"
 date: "2020-07-31"
 ---
 
-# ({{ title }})
-
+# B<sub>0</sub> Unwarping for Fieldmaps
+Danny Kim & Lynne Williams
+Updated: 2020-07-31
 
 ## Requirements
 - `bash` shell (Note: `zsh` is now the shell for `MAC OS`, you will need to switch to `bash` to use the code)
