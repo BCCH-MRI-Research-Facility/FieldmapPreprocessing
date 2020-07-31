@@ -6,7 +6,8 @@ date: "2020-07-31"
 
 # B<sub>0</sub> Unwarping for GE PhaseDiff & Magnitude Fieldmap files
 Danny Kim & Lynne Williams <br>
-Updated: 2020-07-31
+Updated: 2020-07-31 <br>
+Licensed under [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/)
 
 ## Requirements
 - `bash` shell (Note: `zsh` is now the shell for `MAC OS`, you will need to switch to `bash` to use the code)
