@@ -8,7 +8,8 @@ date: "2020-07-31"
 Danny Kim & Lynne Williams <br>
 BCCH MRI Research Facility <br>
 Updated: 2020-07-31 <br>
-Licensed under [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/)
+
+Licensed under [![License: CC0-1.0](https://licensebuttons.net/l/zero/1.0/80x15.png)]
 
 ## Requirements
 - `bash` shell 
