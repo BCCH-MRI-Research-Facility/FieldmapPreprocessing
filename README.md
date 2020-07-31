@@ -66,7 +66,7 @@ Make sure `feat`’s registration step has:
 
 
 ##### Footnotes
-<b id="f2"><b id="f1">1</b></b> `dcm2niix` using the `-b` flag is the recommended dicom converter if the values are not yet in your `.json` file. [↩](#a1)  
+<b id="f2"><b id="f1">1</b></b> [`dcm2niix`](https://github.com/rordenlab/dcm2niix) ([https://github.com/rordenlab/dcm2niix](https://github.com/rordenlab/dcm2niix)) using the `-b` flag is the recommended dicom converter if the values are not yet in your `.json` file. [↩](#a1)  
 
 
 
