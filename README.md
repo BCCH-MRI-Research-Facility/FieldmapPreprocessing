@@ -23,9 +23,9 @@ The script will write the new files to the `fmap` directory for each subject and
 ### If using `fMRIprep`
 You are ready to go.  Make sure the new files are in the `fmap` folder. Use your usual `fmriprep-docker` command to get things going.
 
-### if using `FSL`
+### If using `FSL`
 Load `feat_gui` or `melodic_ica_gui`, and setup prestats B<sub>0</sub> unwarping option with:
-* Fieldmap = `sub-<subjid>_acq-b0mapsplit_run-<0?>_fieldmap.nii.gz
+* Fieldmap = `sub-<subjid>_acq-b0mapsplit_run-<0?>_fieldmap.nii.gz`
 * Fieldmap map = `sub-<subjid>_acq-b0mapsplit_run-<0?>_magnitude.nii.gz`
 * Effective EPI echo spacing = EPI’s time between successive k-space lines (in ms). You can find this in the corresponding `.json` file
 * EPI TE = EPI’s TE (in ms). Again, find the value in the corresponding `.json` file
