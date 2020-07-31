@@ -4,6 +4,9 @@ author: "Danny Kim & Lynne Williams"
 date: "2020-07-31"
 ---
 
+# {{ title }}
+
+
 ## Requirements
 - `bash` shell (Note: `zsh` is now the shell for `MAC OS`, you will need to switch to `bash` to use the code)
 - `FSL` v6.0 or above
