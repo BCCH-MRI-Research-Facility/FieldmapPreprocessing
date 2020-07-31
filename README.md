@@ -17,7 +17,7 @@ To use the shell script enter the following into a `bash` shell from the directo
 bash fieldmap_preproc.sh <BIDS root directory> `pwd`
 ```
 
-The script will write the new files to the `fmap` directory for each subject and enter the original two volume map into the .bidsignore file so that any BIDS derived software (e.g., `MRIQC`, `fMRIprep`) will not pick it up by accident.
+The script will write the new files to the `fmap` directory for each subject and enter the original two volume map into the `.bidsignore` file so that any BIDS derived software (e.g., `MRIQC`, `fMRIprep`) will not pick it up by accident.
 
 ## Now you are ready for `fMRIprep` or `FSL` processing
 ### If using `fMRIprep`
