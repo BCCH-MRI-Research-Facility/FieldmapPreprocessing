@@ -1,10 +1,10 @@
 ---
-title: B<sub>0</sub> Unwarping for Fieldmaps
+title: B<sub>0</sub> Unwarping for GE PhaseDiff & Magnitude Fieldmap Files
 author: "Danny Kim & Lynne Williams"
 date: "2020-07-31"
 ---
 
-# B<sub>0</sub> Unwarping for Fieldmaps
+# B<sub>0</sub> Unwarping for GE PhaseDiff & Magnitude Fieldmap files
 Danny Kim & Lynne Williams <br>
 Updated: 2020-07-31
 
