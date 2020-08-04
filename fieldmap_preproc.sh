@@ -47,7 +47,7 @@ do
   cd ./${subject}/fmap/
 
   # remove and reprocess split files on request
-  if [ ${3} == overwrite ]
+  if [ -n "${3}" ]
   then
     # remove any previously split files from the directory
     rm *split*
@@ -140,8 +140,8 @@ do
       # Now append the original fieldmap and json to the bidsignore file
       echo ${strings[$i]} >> ${1}/.bidsignore
       echo ${strings[$i]%.nii.gz}.json >> ${1}/.bidsignore
-    fi
-  done
+    done
+  fi
 
   # go back to the base directory
   cd ${1}
