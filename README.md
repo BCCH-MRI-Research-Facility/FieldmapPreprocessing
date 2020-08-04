@@ -7,7 +7,7 @@ date: "2020-07-31"
 # B<sub>0</sub> Unwarping for GE PhaseDiff & Magnitude Fieldmap Files
 Danny Kim & Lynne Williams <br>
 BCCH MRI Research Facility <br>
-Updated: 2020-07-31 <br>
+Updated: 2020-08-03 <br>
 
 [![License: CC0-1.0](https://licensebuttons.net/l/zero/1.0/80x15.png)](LICENSE)
 
@@ -42,7 +42,7 @@ chsh bash
 To use the shell script enter the following into a `bash` shell from the directory where you stored the Fieldmap Preprocessing `fieldmap_preproc.sh` file:
 
 ```
-bash fieldmap_preproc.sh <Full path to BIDS root directory> `pwd`
+bash fieldmap_preproc.sh <Full path to BIDS root directory> `pwd` [overwrite]
 ```
 
 The script will write the new files to the `fmap` directory for each subject and enter the original two volume map into the `.bidsignore` file so that any BIDS derived software (e.g., `MRIQC`, `fMRIprep`) will not pick it up by accident.
