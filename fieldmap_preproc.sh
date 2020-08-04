@@ -17,7 +17,7 @@
 # in the BIDS root directory.
 #
 # USAGE:
-# bash fieldmap_preproc.sh <BIDS root directory> `pwd`
+# bash fieldmap_preproc.sh <BIDS root directory> `pwd` [overwrite]
 #
 # OUTPUT:
 # - sub-<subjectid>_acq-b0map-split_fieldmap.nii.gz
