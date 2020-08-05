@@ -37,7 +37,7 @@ FWHM=3 # set width of kernel for erroding the brain mask (should be between 1 an
 cd ${1}
 
 
-for subject in `ls -d sub-*`
+for subject in sub-regtrj005 sub-regtrj006 sub-regtrj007 #`ls -d sub-*`
 do
 
   echo Running ${subject}
@@ -89,12 +89,15 @@ do
       # (vol0001.nii.gz). Regular BET not working well due to bias.  Doing
       # bias correction too.
       # bet vol0001 vol0001_brain -R -m
+      echo "++++++ Running BET"
       bet vol0001 vol0001_brain -B -f 0.55 -g 0 -m
 
       # errode the brain mask. Choose FWHM between 1-3 mm appropriately so that mask is slightly smaller than the brain image
+      echo "++++++ Erroding mask"
       fslmaths vol0001_brain_mask -kernel gauss ${FWHM} -ero vol0001_brain_mask
     
       # remask vol0001.nii.gz with eroded brain mask 
+      echo "++++++ Remasking"
       fslmaths vol0001 -mas vol0001_brain_mask vol0001_brain
     
       echo "++++ Now the Phase-difference Image (this takes awhile. It might be a good time for coffee)"
@@ -108,14 +111,17 @@ do
       fslmaths vol0000 -mul 3.1415 -div ${dTEinv} vol0000_rad
     
       # phase_rad is now in units of radians. Unwrap phase_rad using FSL PRELUDE 
+      echo "++++++ Running PRELUDE"
       prelude -a vol0000 -p vol0000_rad -o vol0000_rad_unwrapped
     
       # convert phase_rad_unwrapped into rad/s units dTEinv = 217
+      echo "++++++ Converting to rad/s"
       fslmaths vol0000_rad_unwrapped -mul ${dTEinv} vol0000_rad_unwrapped_rps
     
       #regularlize phase_rad_unwrapped_rps using FUGUE. As a note, 
       # different regularization methods exists within FUGUE. Note FWHM=5.
       # Change if needed for your data
+      echo "++++++ Regularizing"
       fugue --loadfmap=vol0000_rad_unwrapped_rps.nii.gz \
          -s 5 --savefmap=vol0000_fieldmap.nii.gz
     
@@ -124,6 +130,7 @@ do
       # (using AFNI to keep the history)
 
       # get the run number
+      echo "++++++ Renaming files to BIDS conventions"
       printf -v run "%02d" $(( $i + 1 ))
 
       # write the nifti files
